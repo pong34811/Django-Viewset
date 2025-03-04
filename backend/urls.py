@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenRefreshView
-from accounts.views import UserAuthViewSet, RegisterView, LogoutView ,CustomTokenObtainPairView
+from accounts.views import UserAuthViewSet, RegisterView ,CustomTokenObtainPairView
 
 # ใช้ DefaultRouter สำหรับ ViewSet
 router = DefaultRouter()
@@ -17,7 +17,6 @@ urlpatterns = [
 
     # Register & Logout
     path('api/register/', RegisterView.as_view(), name='register'),
-    path('api/logout/', LogoutView.as_view(), name='logout'),
 
     # ViewSet
     path('api/', include(router.urls)),
